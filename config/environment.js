@@ -57,11 +57,11 @@ module.exports = function(environment) {
 
   ENV.contentSecurityPolicy = {
     'default-src': "'none'",
-    'script-src': "'self' http://maps.googleapis.com http://maps.gstatic.com https://maps.googleapis.com",
-    'font-src': "'self' http://fonts.gstatic.com",
-    'connect-src': "'self' https://api.mixpanel.com http://custom-api.local", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-    'img-src': "'self' http://maps.googleapis.com http://csi.gstatic.com http://maps.gstatic.com http://*.googleapis.com",
-    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+    'script-src': "'self' https://maps.googleapis.com https://maps.gstatic.com",
+    'font-src': "'self' https://fonts.gstatic.com",
+    'connect-src': "'self' https://api.mixpanel.com", // Allow data (ajax/websocket) from api.mixpanel.com
+    'img-src': "'self' https://maps.googleapis.com https://csi.gstatic.com https://maps.gstatic.com https://khms0.googleapis.com https://khms1.googleapis.com",
+    'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'media-src': "'self'"
   };
 

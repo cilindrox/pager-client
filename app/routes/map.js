@@ -10,7 +10,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     var token = session.content.token;
     return raw({
       type: 'GET',
-      url: 'your endpoint url',
+      url: 'http://localhost:3000/visits',
       beforeSend: function (request) {
           request.setRequestHeader('Authorization', 'Bearer ' + token);
       },
