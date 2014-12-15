@@ -1,7 +1,7 @@
-<form {{action 'authenticate' on='submit'}}>
+<form id='form-signin' {{ action 'authenticate' on='submit'}}>
   <label for="identification">Login</label>
-  {{input id='identification' placeholder='Enter Login' value=identification}}
+  {{input id='identification' placeholder='Enter Login' value=identification required='required' autofocus='autofocus'}}
   <label for="password">Password</label>
-  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  {{input id='password' placeholder='Enter Password' type='password' value=password required='required'}}
   <button type="submit">Login</button>
 </form>

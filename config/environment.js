@@ -20,8 +20,8 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    ENV.APP.LOG_ACTIVE_GENERATION = true;
+    ENV.APP.LOG_RESOLVER = true;
+    // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
@@ -44,11 +44,12 @@ module.exports = function(environment) {
   }
 
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:token'
+    authorizer: 'simple-auth-authorizer:token',
+    routeAfterAuthentication: '/'
   };
 
   ENV['simple-auth-token'] = {
-    serverTokenEndpoint: '/endpoint',
+    serverTokenEndpoint: 'RENAME_ME',
     identificationField: 'username',
     tokenPropertyName: 'token',
     authorizationPrefix: 'Bearer ',
@@ -59,7 +60,7 @@ module.exports = function(environment) {
     'default-src': "'none'",
     'script-src': "'self' https://maps.googleapis.com https://maps.gstatic.com",
     'font-src': "'self' https://fonts.gstatic.com",
-    'connect-src': "'self' https://api.mixpanel.com", // Allow data (ajax/websocket) from api.mixpanel.com
+    'connect-src': "'self' http://localhost:3000", // Allow data (ajax/websocket) from http://localhost:3000
     'img-src': "'self' https://maps.googleapis.com https://csi.gstatic.com https://maps.gstatic.com https://khms0.googleapis.com https://khms1.googleapis.com",
     'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com https://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
     'media-src': "'self'"

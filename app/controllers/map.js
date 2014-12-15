@@ -1,20 +1,18 @@
+/* global google */
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  lat:      '37.774546',
-  lng:      '-122.433523',
-  zoom:     13,
-  type:     'satellite',
+  getMarkers: function() {
+    // use cached data
+    var model = this.store.all('visit');
 
-  markers: [],
-
-  actions: {
-    addMarker: function () {
-      this.get('markers').addObject({title: 'new', lat: 0, lng: 0, isDraggable: true});
-    },
-
-    removeMarker: function (marker) {
-      this.get('markers').removeObject(marker);
-    }
+    var markers = [];
+    model.forEach(function(item) {
+      markers.push(new google.maps.LatLng(
+        item.get('latitude'),
+        item.get('longitude')
+      ));
+    });
+    return markers;
   }
 });
