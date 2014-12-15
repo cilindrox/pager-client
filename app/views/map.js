@@ -19,33 +19,18 @@ export default Ember.View.extend({
 
     var pointarray, heatmap;
 
-    // var controller = this.get("controller");
+    var controller = this.get("controller");
     var map = new google.maps.Map(this.$().get(0), mapOptions);
 
     this.set("map", map);
 
     var that = this;
-    var visitData = [
-      new google.maps.LatLng(37.782551, -122.445368),
-      new google.maps.LatLng(37.782745, -122.444586),
-      new google.maps.LatLng(37.782842, -122.443688),
-      new google.maps.LatLng(37.782919, -122.442815),
-      new google.maps.LatLng(37.782992, -122.442112),
-      new google.maps.LatLng(37.783100, -122.441461),
-      new google.maps.LatLng(37.783206, -122.440829),
-      new google.maps.LatLng(37.783273, -122.440324),
-      new google.maps.LatLng(37.783316, -122.440023),
-      new google.maps.LatLng(37.783357, -122.439794),
-      new google.maps.LatLng(37.783371, -122.439687),
-      new google.maps.LatLng(37.783368, -122.439666),
-      new google.maps.LatLng(37.783383, -122.439594),
-      new google.maps.LatLng(37.783508, -122.439525),
-      new google.maps.LatLng(37.783842, -122.439591),
-      new google.maps.LatLng(37.784147, -122.439668),
-      new google.maps.LatLng(37.784206, -122.439686),
-      new google.maps.LatLng(37.784386, -122.439790),
-      new google.maps.LatLng(37.784701, -122.439902)
-    ];
+
+    var visitData = [];
+    var markers = controller.markers;
+    markers.forEach(function(marker) {
+      visitData.push(new google.maps.LatLng(marker.lat, marker.lng));
+    });
 
     pointarray = new google.maps.MVCArray(visitData);
     heatmap = new google.maps.visualization.HeatmapLayer({

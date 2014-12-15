@@ -6,8 +6,8 @@ import AuthenticatedRouteMixin from 'simple-auth/mixins/authenticated-route-mixi
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model: function() {
     var session = this.container.lookup('simple-auth-session:main');
+    if (!session) { return; }
     var token = session.content.token;
-    // TODO(gfestari): trigger only if user is logged
     return raw({
       type: 'GET',
       url: 'your endpoint url',
