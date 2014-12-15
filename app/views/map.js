@@ -1,3 +1,5 @@
+/* global google */
+
 import Ember from 'ember';
 
 export default Ember.View.extend({
@@ -17,7 +19,7 @@ export default Ember.View.extend({
 
     var pointarray, heatmap;
 
-    var controller = this.get("controller");
+    // var controller = this.get("controller");
     var map = new google.maps.Map(this.$().get(0), mapOptions);
 
     this.set("map", map);
