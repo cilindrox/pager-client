@@ -52,14 +52,6 @@ export default Ember.View.extend({
 
     heatmap.setMap(that.get("map"));
 
-    // testacular:
-    (function() {
-      return Ember.$().get('http://api.jquery.com/jquery.get/', function(result) {
-        console.log('CALLED');
-      });
-    })();
-
-
     // When clicking on the map, we create our own markerObject and pass it to our controller.
     // The controller handles the marker management.
     // The view handles placing the marker on the map.
