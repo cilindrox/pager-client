@@ -19,10 +19,10 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
+**IMPORTANT**: make sure you configure the `ENV.simple-auth-token` and set its `serverTokenEndpoint` property accordingly.
+
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-
-**IMPORTANT**: make sure you configure the `ENV.simple-auth-token` and set its `serverTokenEndpoint` property accordingly.
 
 ### Code Generators
 
